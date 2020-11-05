@@ -1,0 +1,218 @@
+.postPage{
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 1rem;
+    background-color: #fff;
+}
+.main{
+    padding: 1rem;
+    width: 100%;
+
+}
+.postPart .postImg {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+
+}.postPage{
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 1rem;
+    background-color: #fff;
+}
+.main{
+    padding: 1rem;
+    width: 100%;
+
+}
+.postPart .postImg {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+
+}
+.postPart .postImg img{
+    width: 100%;
+}
+
+.postPart .author h5{
+    margin-left: 1rem;
+    font-style: italic;
+    font-size: 14px;
+}
+.postPart .date h4{
+    margin-left: 1rem;
+}
+.author h5 mat-icon{
+    padding-top: 10px;
+    font-size: 20px;
+}
+.title h1{
+    margin-left: 1rem;  
+    margin-right: 3rem;
+    color: rgb(70, 118, 76);
+    text-align: justify;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.description h3{
+    font-size: 15px;
+    line-height: 20px;
+    text-align: justify;
+    margin: 0 3rem 1rem 1rem;
+    white-space: pre-wrap;
+}
+
+.commentPart h3{
+    font-style: italic;
+}
+
+.commentForm{
+    
+    margin-right: 3rem;
+
+}
+.commentForm mat-form-field{
+    width: 100%;
+}
+.commentPart h3{
+    margin: 0 3rem 1rem 1rem;
+}
+.hr{
+    margin: 0 3rem 1rem 1rem;
+    background-color: rgb(70, 118, 76);
+    height: 2px;
+
+}
+.komentari{
+
+    margin: 3rem 3rem 1rem 1rem;
+}
+.komentar{
+    padding-left: 2rem;
+}
+.komentar h2{
+    color: rgb(81, 137, 88);
+    width: auto;
+    height: 17px;
+    font-size: 19px;
+}
+.commentSuccess{
+
+    display: none;
+    margin: 1rem 3rem 1rem 2rem;
+    color: rgb(81, 137, 88);
+   
+  
+}
+.commentSuccess h2{
+    
+    margin: 1rem 3rem 1rem 2rem;
+    color: rgb(81, 137, 88);
+}
+.komentar span.h4{
+    margin-left: 1rem;
+    font-size: 16px;
+    color: rgb(103, 103, 103);
+}
+
+
+
+
+@media screen  and (max-width:768px){
+    .postPage{
+        grid-template-columns: 100%;
+    }
+}
+.postPart .postImg img{
+    width: 100%;
+}
+
+.postPart .author h5{
+    margin-left: 1rem;
+    font-style: italic;
+    font-size: 14px;
+}
+.postPart .date h4{
+    margin-left: 1rem;
+}
+.author h5 mat-icon{
+    padding-top: 10px;
+    font-size: 20px;
+}
+.title h1{
+    margin-left: 1rem;
+    margin-right: 3rem;
+    color: rgb(70, 118, 76);
+    text-align: justify;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+.description h3{
+    font-size: 15px;
+    line-height: 20px;
+    text-align: justify;
+    margin: 0 3rem 1rem 1rem;
+}
+
+.commentPart h3{
+    font-style: italic;
+}
+
+.commentForm{
+    
+    margin-right: 3rem;
+
+}
+.commentForm mat-form-field{
+    width: 100%;
+}
+.commentPart h3{
+    margin: 0 3rem 1rem 1rem;
+}
+.hr{
+    margin: 0 3rem 1rem 1rem;
+    background-color: rgb(70, 118, 76);
+    height: 2px;
+
+}
+.komentari{
+
+    margin: 3rem 3rem 1rem 1rem;
+}
+.komentar{
+    padding-left: 2rem;
+}
+.komentar h2{
+    color: rgb(81, 137, 88);
+    width: auto;
+    height: 17px;
+    font-size: 19px;
+}
+.commentSuccess{
+
+    display: none;
+    margin: 1rem 3rem 1rem 2rem;
+    color: rgb(81, 137, 88);
+   
+  
+}
+.commentSuccess h2{
+    
+    margin: 1rem 3rem 1rem 2rem;
+    color: rgb(81, 137, 88);
+}
+.komentar span.h4{
+    margin-left: 1rem;
+    font-size: 16px;
+    color: rgb(103, 103, 103);
+}
+
+
+
+
+@media screen  and (max-width:768px){
+    .postPage{
+        grid-template-columns: 100%;
+    }
+}

@@ -1,0 +1,30 @@
+<div class="addKatalog">
+    <div class="katalogAdd">
+    <h1>Dodajte katalog</h1>
+    <form [formGroup]="katalog" (ngSubmit)="addKatalog()">
+
+        <mat-form-field appearance="fill">
+            <mat-label>Link Kataloga</mat-label>
+            <input matInput type="text" required formControlName="link">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Ime Kataloga</mat-label>
+            <input matInput type="text" required formControlName="name">
+        </mat-form-field>
+
+        <div class="slikaAdd">
+            <label for="picture">Slika</label>
+            <input type="file" (change)="onImageAdded($event)" id="#picture" required>
+
+        </div>
+
+
+        <button mat-raised-button color="primary" type="submit">Dodaj</button>
+
+    </form>
+
+
+</div>
+
+</div>

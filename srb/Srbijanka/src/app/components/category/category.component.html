@@ -1,0 +1,35 @@
+<mat-progress-bar color="primary" *ngIf="progres" mode="indeterminate"></mat-progress-bar>
+<div class="postCategoryPage">
+    
+
+    <pagination-controls class="myPagination" style="text-align: center;" previousLabel=" " nextLabel=" " (pageChange)="p = $event"
+    maxSize="5" (click)="goTop()"> </pagination-controls>
+    <div class="posts">
+        <div *ngFor="let post of posts | paginate:{itemsPerPage:14, currentPage:p}">
+            <div class="post" >
+                <div class="postImg" (click)="openPost(post._id)">
+                    <img [src]="getImage(post.picture)" alt="">
+                </div>
+                <div class="postContent" >
+                    <div class="postDate">
+                        {{post.date | date: 'M/d/yy, h:mm'}}
+                    </div>
+                    <div class="postTitle" (click)="openPost(post._id)">
+                        <h2>{{post.title}}</h2>
+                    </div>
+                    <div class="postDescription">
+                        <h3>{{post.description}}</h3>
+                    </div>
+                </div>
+                <div *ngIf="ulogovanIn()" class="action">
+                    <button mat-raised-button (click)="deletePost(post)" color="warn">Delete</button>
+                    <button mat-raised-button color="primary" (click)="editPost(post)">Edit</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <pagination-controls class="myPagination" style="text-align: center;" previousLabel=" " nextLabel=" " (pageChange)="p = $event"
+    maxSize="5" (click)="goTop()"> </pagination-controls>
+</div>

@@ -1,0 +1,37 @@
+.imageAdd{
+    background-color: #fff;
+    padding: 1rem;
+    width: 400px;
+    border-radius: 5px;
+}
+.imageAdd form mat-form-field, button
+{   
+    width: 100%;
+
+}
+.imageAdd h1{
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    border: 2px solid rgb(1, 144, 42);
+    color: rgb(1, 144, 42);
+    border-radius: 5px;
+    font-weight: 500;
+    margin-bottom: 2rem;
+
+}
+.addImage {
+
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.slikaAdd{
+    margin: 2rem;
+
+}
+.slikaAdd label{
+    margin: 1rem;
+}

@@ -1,0 +1,27 @@
+<div class="videosPage">
+
+    <pagination-controls class="myPagination" style="text-align: center;" previousLabel=" " nextLabel=" "
+        (pageChange)="p = $event" maxSize="5" (click)="goTop()"> </pagination-controls>
+    <div class="videos">
+        <div *ngFor="let video of videos  | paginate:{itemsPerPage:14, currentPage:p}">
+            <div class="video">
+                <div class="videoLink">
+                    <iframe [src]="getVideo(video.link)" frameborder="0"></iframe>
+
+                </div>
+                <div class="videoDescription">
+                    <p>{{video.description}}</p>
+                </div>
+                <div class="action" *ngIf="ulogovanIn()">
+                    <button mat-raised-button color="warn" (click)="deleteVideo(video._id)">Delete</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <pagination-controls class="myPagination" style="text-align: center;" previousLabel=" " nextLabel=" "
+        (pageChange)="p = $event" maxSize="5" (click)="goTop()"> </pagination-controls>
+
+</div>

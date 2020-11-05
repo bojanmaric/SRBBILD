@@ -1,0 +1,56 @@
+.addPost{
+    background-color: #fff;
+    padding: 1rem;
+    width: 400px;
+    border-radius: 5px;
+}
+.addPost h1{
+    text-align: center;
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    border: 2px solid rgb(1, 144, 42);
+    color: rgb(1, 144, 42);
+    border-radius: 5px;
+    font-weight: 500;
+
+}
+.postAdd {
+
+    margin-top: 5rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+form{
+    padding-top: 1rem;
+}
+form mat-form-field{
+    
+    width: 100%;
+}
+.desc {
+    margin: 1rem auto;
+}
+
+.slikaAdd{
+    margin: 2rem;
+
+}
+.slikaAdd label{
+    margin: 1rem;
+}
+.buttons{
+    display: flex;
+    justify-content: center;
+}
+.buttons button{
+    margin: auto 10px;
+    width: 100%;
+}
+.desc label{
+    text-align: center;
+}
+.desc textarea{
+    width: 100%;
+}

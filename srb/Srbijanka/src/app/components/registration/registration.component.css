@@ -1,0 +1,33 @@
+.reg{
+    padding-top: 3rem;
+}
+.reg h1{
+    text-align: center;
+}
+.registration{
+    width: 15rem;
+    margin: 3rem auto;
+    
+}
+.registration mat-form-field, button{
+    width: 100%;
+    outline: none;
+}
+
+.spinerr{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    opacity: .8;
+    background: rgb(81, 81, 81);
+
+}
+.spinerr mat-spinner{
+    top: 40%;
+    color: rgb(152, 4, 4)!important;
+}

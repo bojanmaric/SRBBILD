@@ -1,0 +1,8 @@
+.commentsView{
+    margin: 6rem auto;
+    width: 80%;
+    max-width: 1200px;
+}
+mat-expansion-panel{
+    margin: .8rem;
+}

@@ -1,0 +1,57 @@
+<mat-spinner *ngIf="pokazi"></mat-spinner>
+
+<div class="postAdd">
+    <div class="addPost">
+
+        <h1 class="title">Dodavanje objave</h1>
+        <form [formGroup]="post" (ngSubmit)="add()">
+
+            <mat-form-field appearance="fill">
+                <mat-label>Naslov Objave </mat-label>
+                <input matInput required formControlName="title">
+            </mat-form-field>
+            <!--  <mat-form-field appearance="fill">
+        <mat-label>Tekst Objave</mat-label>
+        <input matInput formControlName="description">
+    </mat-form-field> -->
+            <mat-form-field appearance="fill">
+                <mat-label>Kategorija</mat-label>
+                <mat-select required formControlName="category">
+                    <mat-option value="privreda">Privreda</mat-option>
+                    <mat-option value="ekonomija">Ekonomija</mat-option>
+                    <mat-option value="vocarstvoIvinogradarstvo">Voćarstvo i vinogradarstvo</mat-option>
+                    <mat-option value="lovIribolov">Lov i ribolov</mat-option>
+                    <mat-option value="turizam">Turizam</mat-option>
+                    <mat-option value="ratarstvoIpoljoprivreda">Ratarstvo i poljoprivreda</mat-option>
+                    <mat-option value="stocarstvo">Stočarstvo</mat-option>
+                    <mat-option value="organska">Organska</mat-option>
+
+                </mat-select>
+            </mat-form-field>
+
+
+            <mat-form-field appearance="fill">
+                <mat-label>Sadržaj objave</mat-label>
+               <textarea matInput cols="30" required rows="10" formControlName="description"></textarea>
+            </mat-form-field>
+          
+
+            <mat-form-field appearance="fill">
+                <mat-label>Video</mat-label>
+                <input matInput formControlName="video">
+            </mat-form-field>
+            <div class="slikaAdd">
+                <label for="picture">Slika</label>
+                <input type="file" (change)="onImageAdded($event)" id="#picture" required>
+
+            </div>
+            <div class="buttons">
+                <button mat-raised-button color="primary" type="submit">Dodaj Objavu</button>
+                <button mat-raised-button color="warn" type="reset">Reset</button>
+
+            </div>
+
+
+        </form>
+    </div>
+</div>

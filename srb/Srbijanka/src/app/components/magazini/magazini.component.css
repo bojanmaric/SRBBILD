@@ -1,0 +1,59 @@
+.magaziniPage {
+  width: 95%;
+  margin: 0 auto 3rem auto;
+  background-color: #fff;
+  padding: 1rem 0;
+  opacity: .9;
+
+
+}
+
+.magazini {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.magazini a {
+  text-decoration: none;
+
+
+}
+
+.magazin {
+
+  cursor: pointer;
+  position: relative;
+  width: 70%;
+  margin: 1rem;
+  overflow: hidden;
+
+  padding: 1rem;
+
+}
+
+.magazin .magazinImg {
+  width: 100%;
+  overflow: hidden;
+}
+
+.magazinImg img {
+  width: 100%;
+}
+
+.magazinTitle h2 {
+  text-align: center;
+  color: rgb(16, 140, 20);
+}
+
+.action {
+
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.action button {
+  width: 90%;
+  margin: 10px;
+}

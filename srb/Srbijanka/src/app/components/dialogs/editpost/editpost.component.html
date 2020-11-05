@@ -1,0 +1,33 @@
+<div class="editPost">
+    <mat-form-field appearance="fill">
+        <mat-label>Naslov</mat-label>
+        <input type="text" matInput [(ngModel)]="data.title">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Kategorija</mat-label>
+        <mat-select required [(ngModel)]="data.category">
+            <mat-option value="privreda">Privreda</mat-option>
+            <mat-option value="ekonomija">Ekonomija</mat-option>
+            <mat-option value="vocarstvoIvinogradarstvo">Voćarstvo i vinogradarstvo</mat-option>
+            <mat-option value="lovIribolov">Lov i ribolov</mat-option>
+            <mat-option value="turizam">Turizam</mat-option>
+            <mat-option value="ratarstvoIpoljoprivreda">Ratarstvo i poljoprivreda</mat-option>
+            <mat-option value="stocarstvo">Stočarstvo</mat-option>
+            <mat-option value="organska">Organska</mat-option>
+
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Video</mat-label>
+        <input type="text" matInput [(ngModel)]="data.video">
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea matInput [(ngModel)]="data.description" cols="50" rows="15"></textarea>
+    </mat-form-field>
+    <div class="actions">
+        <button mat-raised-button color="primary" (click)="update()"> Izmeni</button>
+        <button mat-raised-button color="warn" (click)="cancel()"> Odustani</button>
+
+    </div>
+</div>

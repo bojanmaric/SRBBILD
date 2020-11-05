@@ -1,0 +1,23 @@
+<div class="addVideo">
+    <div class="videoAdd">
+    <h1>Dodajte Video</h1>
+    <form [formGroup]="video" (ngSubmit)="addVideo()">
+
+        <mat-form-field appearance="fill">
+            <mat-label>Link Videa</mat-label>
+            <input matInput type="text" required formControlName="link">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Opis Videoa</mat-label>
+            <input matInput type="text" required formControlName="description">
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit">Dodaj</button>
+
+    </form>
+
+
+</div>
+
+</div>

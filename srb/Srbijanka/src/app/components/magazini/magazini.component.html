@@ -1,0 +1,27 @@
+<div class="magaziniPage">
+    
+    <pagination-controls class="myPagination" style="text-align: center;" previousLabel=" " nextLabel=" " (pageChange)="p = $event"
+    maxSize="5" (click)="goTop()"> </pagination-controls>
+    <div class="magazini">
+        <div *ngFor="let catalog of katalozi  | paginate:{itemsPerPage:14, currentPage:p}">
+           
+            <div class="magazin" >
+                <a href="{{catalog.link}}" target="_blank">
+                <div class="magazinTitle">
+                    <h2>catalog.name</h2>
+                </div>
+                <div class="magazinImg">
+                    <img [src]="getImage(catalog.srcSlika)" alt="">
+                </div>
+            </a>
+                <div *ngIf="ulogovanIn()" class="action">
+                    <button mat-raised-button (click)="deleteMagazin(catalog._id, catalog.srcSlika)" color="warn">Delete</button>
+                </div> 
+            </div>
+       
+        </div>
+    </div>
+    
+    <pagination-controls class="myPagination" style="text-align: center;" previousLabel=" " nextLabel=" " (pageChange)="p = $event"
+    maxSize="5" (click)="goTop()"> </pagination-controls>
+</div>

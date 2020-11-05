@@ -1,0 +1,24 @@
+<div class="commentsView">
+    <mat-accordion>
+        <div *ngFor="let comment of comments">
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+
+                        <button mat-icon-button color="primary" (click)="updateComment(comment)"><mat-icon>edit</mat-icon></button>
+
+                        <h3>{{comment.date | date : 'M/d/yy H:m'}}</h3>
+                    </mat-panel-title>
+                    <mat-panel-description>
+                        {{comment.name}}
+                    </mat-panel-description>
+                   
+                </mat-expansion-panel-header>
+                {{comment.content}}
+                <button mat-icon-button color="warn" (click)="deleteComment(comment._id)"><mat-icon>delete</mat-icon></button>
+
+            </mat-expansion-panel>
+
+        </div>
+    </mat-accordion>
+</div>

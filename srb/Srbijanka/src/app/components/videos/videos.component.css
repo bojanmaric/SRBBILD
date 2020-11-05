@@ -1,0 +1,36 @@
+.videosPage{
+    width: 90%;
+    margin: 0 auto 3rem auto;
+    background-color: #fff;
+    padding: 1rem 0;
+  
+}
+.videos{
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    opacity: .9;
+}
+.video{
+    width: 320px;
+    margin: 1rem;
+    
+}
+.video .videoLink{
+    width: 100%;
+}
+.videoLink iframe{
+    width: 100%;
+}
+@media screen  and (max-width:480px){
+    
+    .video .videoLink {
+        width: 90% !important;
+    }
+     iframe{
+        width: 90% !important;
+      
+        height: auto;
+    }
+}

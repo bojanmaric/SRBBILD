@@ -1,0 +1,127 @@
+<!-- 
+<div  class="imageTop">
+  <img  src="../../assets/Logo.png" alt="">
+</div> -->
+<mat-sidenav-container class="sidenav-container" autosize>
+
+
+  <mat-sidenav #drawer class="sidenav" fixedInViewport="false" [ngClass]="{hidden : !(isHandset$ | async) }"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false">
+    <mat-toolbar [ngStyle]="{'background-color':'#004d00','color':'rgb(218, 218, 218)'}">Srbijanka</mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item (click)="drawer.toggle()" [routerLink]="['/']"></a>
+      <a mat-list-item (click)="drawer.toggle()" [routerLink]="['/']">Početna</a>
+      <a mat-list-item (click)="drawer.toggle()" [routerLink]="['/category/privreda']">Privreda</a>
+      <a mat-list-item (click)="drawer.toggle()" [routerLink]="['/category/ekonomija']">ekonomija</a>
+      <a mat-list-item (click)="drawer.toggle()" [routerLink]="['/category/turizam']">Turizam</a>
+      <a mat-list-item (click)="drawer.toggle()" [routerLink]="['/category/stocarstvo']">Stočarstvo</a>
+      <a mat-list-item (click)="drawer.toggle()" [routerLink]="['/category/lovIribolov']">Lov i ribolov</a>
+      <a mat-list-item (click)="drawer.toggle()" [routerLink]="['/category/vocarstvoIvinogradarstvo']">Voćarstvo</a>
+      <a mat-list-item (click)="drawer.toggle()" [routerLink]="['/category/ratarstvoIpoljoprivreda']">Ratarstvo i povrtarstvo</a>
+      <a mat-list-item (click)="drawer.toggle()" [routerLink]="['/category/organska']">Organska poljoprivreda</a>
+      <a mat-list-item (click)="drawer.toggle()" [routerLink]="['/videos']">Snimci</a>
+      <a mat-list-item (click)="drawer.toggle()" [routerLink]="['/magazini']">Magazini</a>
+
+
+
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <mat-toolbar [ngStyle]="{ 'background-color':'#006600'}">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+
+      <div *ngIf="isHandset$ | async" [routerLink]="['/']" class="logo">
+        <img src="../../assets/Logo.png" alt="">
+      </div>
+      <div class="cen" [ngClass]="{hidden : (isHandset$ | async) }">
+      
+        <ul class="meni">
+          <li class="meniItem" [routerLink]="['/']">Pocetna</li>
+
+          <li class="meniItem" [routerLink]="['/category/privreda']">Privreda</li>
+          <li class="meniItem" [routerLink]="['/category/ekonomija']">ekonomija</li>
+          <li class="meniItem" [routerLink]="['/category/turizam']">Turizam</li>
+          <li class="meniItem" [routerLink]="['/category/stocarstvo']">Stočarstvo</li>
+          <li class="meniItem" [routerLink]="['/category/lovIribolov']">Lov i ribolov</li>
+          <li class="meniItem" [routerLink]="['/category/vocarstvoIvinogradarstvo']">Voćarstvo</li>
+          <li class="meniItem" [routerLink]="['/category/ratarstvoIpoljoprivreda']">Ratarstvo</li>
+          <li class="meniItem" [routerLink]="['/category/organska']">Organska</li>
+
+        </ul>
+      </div>
+      <span *ngIf="!(isHandset$ | async)" class="spacer"></span>
+
+      <div *ngIf="ulogovanIn()" class="adminPanel">
+        <button mat-icon-button [matMenuTriggerFor]="beforeMenu">
+          <mat-icon>support_agent</mat-icon>
+        </button>
+        <mat-menu #beforeMenu="matMenu" xPosition="before">
+          <button mat-menu-item [routerLink]="['/addPost']">Dodaj Post</button>
+          <button mat-menu-item [routerLink]="['/addCatalog']">Dodaj Katalog</button>
+          <button mat-menu-item [routerLink]="['/addVideo']">Dodaj Video</button>
+          <button mat-menu-item [routerLink]="['/addImage']">Dodaj Sliku</button>
+
+
+          <button mat-menu-item [routerLink]="['/commentView']">Pregled komentara</button>
+
+
+
+          <button mat-menu-item [routerLink]="['/registration']">Registration</button>
+        </mat-menu>
+      </div>
+
+      <div class="log">
+        <button *ngIf="!ulogovanIn()" mat-icon-button [routerLink]="['/login']">
+          <mat-icon>account_circle</mat-icon>
+
+        </button>
+
+        <button *ngIf="ulogovanIn()" (click)="logout()" mat-icon-button>
+          <mat-icon>exit_to_app</mat-icon>
+        </button>
+      </div>
+    </mat-toolbar>
+
+    <div class="imageTop">
+      <img src="../../assets/Logo.png" alt="">
+    </div>
+
+    <div class="centerPart">
+      <div class="left">
+        <router-outlet (activate)="onActivate($event)"></router-outlet>
+      </div>
+      <div class="right">
+        <h1 [routerLink]="['/magazini']" class="snimci" >Magazini</h1>
+
+        <div class="magazin" [routerLink]="['/magazini']" style="cursor: pointer;">
+          <div *ngFor="let catalog of catalogs">
+
+            <div class="magazinPost"  [routerLink]="['/magazin']" style="cursor: pointer;  outline: none;">
+              <img [src]="getCatalogImg(catalog.srcSlika)" alt="">
+              <h2 style="color:rgb(47, 108, 71); text-align: center; font-weight: 400;">{{catalog.name}}</h2>
+            </div>
+
+          </div>
+
+
+        </div>
+        <h1 [routerLink]="['/videos']" class="snimci" >Snimci</h1>
+        <div class="videos">
+
+          <div *ngFor="let video of videos">
+            <h3  style="cursor: pointer; text-align:center; color:rgb(47, 108, 71); outline: none;">{{video.description}}</h3>
+            <iframe [src]="getVideo(video.link)" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+          </div>
+
+        </div>
+      </div>
+    </div>
+   
+    <app-footer></app-footer>
+  </mat-sidenav-content>
+</mat-sidenav-container>

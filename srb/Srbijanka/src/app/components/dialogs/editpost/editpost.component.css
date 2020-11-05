@@ -1,0 +1,21 @@
+.editPost{
+    padding: 1rem 2rem;
+    
+    display: inline-block;
+   
+}
+
+.editPost mat-form-field, mat-option{
+    width: 80%;
+    margin: 1rem auto;
+}
+ 
+.editPost .actions{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.actions button{
+    width: 90%;
+    margin: 10px;
+}

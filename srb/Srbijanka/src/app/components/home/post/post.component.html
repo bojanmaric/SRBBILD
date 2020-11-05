@@ -1,0 +1,69 @@
+<div class="postPage">
+    <div class="main">
+        <div class="postPart">
+            <div class="postImg">
+                <img [src]="getImage(post.picture)" alt="Slika">
+            </div>
+            <div class="author">
+                <h5>
+                   Autor: {{post.userPost}}
+                </h5>
+            </div>
+            <div class="date">
+                <h4>{{post.date | date: 'M/d/yy, h:mm ' }}</h4>
+            </div>
+            <div class="title">
+                <h1>{{post.title}}</h1>
+            </div>
+            <div *ngIf="post.video!='noVideo'" class="postImg">
+                <iframe [src]="getVideo(post.video)" [ngStyle]="{'width':'60%','height':'auto','padding':'1rem'}" frameborder="0" ></iframe>
+            </div>
+            <div class="description">
+                <h3>{{post.description}} </h3>
+            </div>
+
+        </div>
+        <hr class="hr">
+        <div class="commentPart">
+            <h3>Svaki komentar će pregledati urednici pre objavljivanja na sajtu</h3>
+            <form class="commentForm" (ngSubmit)="postComment()" [formGroup]="comment">
+                <mat-form-field appearance="fill">
+                    <mat-label>Vaše ime</mat-label>
+                    <input type="text" matInput required formControlName="name"  placeholder="Ime">
+                </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                    <mat-label>Sadržaj komentara</mat-label>
+                   <textarea matInput required formControlName="content" cols="30" rows="5"></textarea>
+                </mat-form-field>
+                <div class="actionComment">
+                    <button mat-raised-button type="submit" color="primary">POŠALJI</button>
+                </div>
+            </form>
+            <div class="commentSuccess">
+                <h2>Uspeno ste poslali komentar, nakon pregleda bice postavljen. </h2>
+            </div>
+
+        </div>
+
+        <div class="komentari">
+            <div class="title">
+                <h1>KOMENTARI <span *ngIf="comments.length>0">{{comments.length}}</span> </h1>
+            </div>
+            <hr class="hr">
+            <div class="komentar" *ngIf="comments.length==0">
+                <h2>Nema komentara</h2>
+            </div>
+            <div *ngIf="comments.length>0">
+            <div  *ngFor="let comment of comments">
+               <div class="komentar">
+                   <h2>{{comment.name}},&nbsp;<span class="komDate">{{comment.date | date: 'M/d/yy, h:mm'}}</span> <span class="h4">{{comment.content}}</span></h2>
+                  
+               </div>
+            </div> 
+        </div>
+        </div>
+       
+    </div>
+    
+</div>

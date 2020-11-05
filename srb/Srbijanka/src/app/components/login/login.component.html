@@ -1,0 +1,28 @@
+
+<form (ngSubmit)="logi()" [formGroup]="korisnik" class="loging">
+  <mat-form-field appearance="fill">
+    <mat-label>Email</mat-label>
+    <input matInput required formControlName="username" [errorStateMatcher]="matcher"
+      placeholder="Ex. pat@example.com">
+    <mat-hint>Errors appear instantly!</mat-hint>
+    <mat-error *ngIf="korisnik.hasError('email') && !korisnik.hasError('required')">
+      Please enter a valid email address
+    </mat-error>
+
+    <mat-error *ngIf="korisnik.hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="fill">
+    <mat-label>Enter your password</mat-label>
+    <input required matInput formControlName="password" [type]="hide ? 'password' : 'text'">
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+      [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
+  <button type="submit" mat-raised-button color="primary">Login </button>
+</form>
+<div *ngIf="showSpiner" class="spinerr">
+<mat-spinner></mat-spinner>
+</div>

@@ -1,0 +1,195 @@
+.home {
+  width: 90%;
+  max-width: 1400px;
+  margin: 0 auto 2rem;
+  
+  padding-top: 1rem;
+
+  background-color: #fff;
+  opacity: .95;
+  border-radius: 3px;
+  padding-bottom: 2rem;
+
+}
+
+.home .mainSide .dailyImage {
+  overflow: hidden;
+  width: 90%;
+ 
+  margin: 1rem auto;
+  }
+
+.dailyImage img {
+  width: 100%;
+  height: auto;
+  transition: 1s;
+  
+
+}
+
+.dailyImage img:hover,
+.dailyImage img:focus {
+
+  transform: scale(1.1);
+
+}
+
+.home .mainSide .posts {
+
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: .6rem;
+  justify-content: center;
+  padding-bottom: 2rem;
+
+}
+
+.posts .post {
+  width: 200px;
+  height: 300px;
+  padding-bottom: 1.6rem;
+  margin: .6em;
+  overflow: hidden;
+  box-shadow: -3px 0 8px 0 rgb(121, 121, 121);
+  position: relative;
+
+}
+
+.post:hover {
+  cursor: pointer;
+}
+
+.post .postImage {
+  width: 100%;
+  overflow: hidden;
+  height:132px;
+}
+
+.post .postImage img {
+  width: 100%;
+  transition: 1s;
+}
+
+.post .postImage img:hover,
+.postImage img:focus {
+  transform: scale(1.1);
+
+}
+
+.post .postContent {
+  padding: 5px 8px;
+}
+
+.post .postContent .postTitle {
+  text-align: justify;
+  
+  height: auto;
+
+
+}
+
+.post .postContent .postTitle h2 {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21px;
+  
+}
+
+.actions {
+  position: absolute;
+  width: 100%;
+ 
+  top: 0;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 50% 50%;
+
+}
+.actions button{
+  width: 90%;
+  margin: 5px auto;
+}
+
+.post .postContent .postDescription {
+  text-align: justify;
+  height: 78px;
+  overflow: hidden;
+  
+  
+}
+.postDescription h3{
+  font-size: 16px;
+}
+.postDescription p{
+  height: 100px;
+  overflow: hidden;
+}
+
+
+/* aside */
+
+.magazin .magazinPost {
+  margin: 5px;
+}
+
+.magazin .magazinPost img {
+  width: 100%;
+}
+
+.magazin {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.aside .videos {
+  width: 100%;
+
+}
+
+.aside .videos iframe {
+  width: 90%;
+  height: auto;
+  margin: 10px;
+}
+
+
+
+
+
+
+@media screen and (max-width:786px) {
+
+  .imageTop img {
+    width: 90%;
+  }
+
+  .post .postContent .postTitle h2 {
+    font-size: 16px;
+  }
+
+  .aside {
+    margin-top: 1rem;
+  }
+.posts{
+    display: grid !important;
+    grid-template-columns: 50% 50%!important;
+  }
+  .post{
+    margin: 10px auto!important;
+    width: 90%!important;
+    height: 250px!important;
+  }
+
+  .aside .videos {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  .aside .videos iframe {
+    width: 90%;
+  }
+
+
+
+}

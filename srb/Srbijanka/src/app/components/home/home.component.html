@@ -1,0 +1,51 @@
+
+<div class="home">
+   
+    <div class="mainSide">
+        <div  class="dailyImage">
+            <img [src]="showDailyImage()" alt="">
+
+        </div>
+
+
+        <pagination-controls class="myPagination" style="text-align: center;" previousLabel=" " nextLabel=" " (pageChange)="p = $event"
+        maxSize="5" (click)="goTop()"> </pagination-controls>
+        <div class="posts">
+            <div *ngFor="let post of (posts | async)?.posts | paginate:{itemsPerPage:14, currentPage:p}" >
+                <div class="post">
+                    <div  class="postImage">
+                        <img [src]="getImage(post.picture)"  (click)="openPost(post._id)" alt="">
+                    </div>
+                    <div  (click)="openPost(post._id)" class="postContent">
+                        <div class="postDate">
+                            {{post.date | date: 'M/d/yy, h:mm'}}
+                        </div>
+                        <div class="postTitle">
+                            <h2>{{post.title}}</h2>
+                        </div>
+                        <div class="postDescription">
+                            <p> {{post.description}}</p>
+                           
+
+                        </div>
+                        
+                    </div>
+    
+    
+                    <div *ngIf="ulogovanIn()" class="actions">
+                        <button mat-raised-button color="warn" (click)="deletePost(post)">Delete</button>
+                        <button mat-raised-button color="primary" (click)="editPost(post)">Edit</button>
+
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+        
+        <pagination-controls class="myPagination" style="text-align: center; " previousLabel=" " nextLabel=" " (pageChange)="p = $event"
+        maxSize="5" (click)="goTop()"> </pagination-controls>
+
+    </div>
+</div>

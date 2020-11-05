@@ -1,0 +1,9 @@
+<div class="dialogComment">
+  <h1> {{data.name}}</h1>
+  <h2>{{data.content}}</h2> 
+  <mat-checkbox [(ngModel)]="data.banned">Zabranjen</mat-checkbox>
+
+  <br>
+  <button mat-raised-button color="primary" (click)="update()">Izmeni</button>
+  <button  mat-raised-button color="warn"(click)="cancel()">Otkaži</button>
+</div>
